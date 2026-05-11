@@ -28,9 +28,15 @@ public class BaseTest {
 
             ChromeOptions options = new ChromeOptions();
 
-            options.addArguments("--headless=new");
-            options.addArguments("--no-sandbox");
-            options.addArguments("--disable-dev-shm-usage");
+            String headless =
+                    System.getProperty("headless", "false");
+
+            if (headless.equalsIgnoreCase("true")) {
+
+                options.addArguments("--headless=new");
+                options.addArguments("--no-sandbox");
+                options.addArguments("--disable-dev-shm-usage");
+            }
 
             driver = new ChromeDriver(options);
 

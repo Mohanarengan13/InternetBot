@@ -2,62 +2,16 @@ package com.krct;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.annotations.*;
+import org.testng.annotations.Test;
 
-import java.time.Duration;
-
-public class BtestAlert extends BaseTest{
-
-    private WebDriver driver;
-    private WebDriverWait wait;
+public class BtestAlert extends BaseTest {
 
     By alertBtn = By.xpath("//button[text()='Click for JS Alert']");
     By confirmBtn = By.xpath("//button[text()='Click for JS Confirm']");
     By promptBtn = By.xpath("//button[text()='Click for JS Prompt']");
     By result = By.id("result");
-
-    @BeforeMethod
-    public void setup() {
-
-        String browser = System.getProperty("browser", "chrome");
-
-        if (browser.equalsIgnoreCase("chrome")) {
-
-            ChromeOptions options = new ChromeOptions();
-
-            options.addArguments("--headless=new");
-            options.addArguments("--no-sandbox");
-            options.addArguments("--disable-dev-shm-usage");
-
-            driver = new ChromeDriver(options);
-
-        }
-
-        else if (browser.equalsIgnoreCase("firefox")) {
-
-            driver = new FirefoxDriver();
-
-        }
-
-        else {
-
-            throw new RuntimeException("Invalid browser: " + browser);
-        }
-
-        driver.manage().window().maximize();
-
-        driver.manage().timeouts()
-                .implicitlyWait(Duration.ofSeconds(10));
-
-        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-    }
 
     public void openPage() {
         driver.get("https://the-internet.herokuapp.com/javascript_alerts");
@@ -138,12 +92,5 @@ public class BtestAlert extends BaseTest{
         alert.accept();
 
         Assert.assertTrue(driver.findElement(result).getText().contains("test"));
-    }
-
-    @AfterMethod
-    public void tearDown() {
-        if (driver != null) {
-            driver.quit();
-        }
     }
 }
