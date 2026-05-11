@@ -17,7 +17,7 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 import java.util.List;
 
-public class ChoverTest {
+public class ChoverTest extends BaseTest{
 
     WebDriver driver;
     WebDriverWait wait;

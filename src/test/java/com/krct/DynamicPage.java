@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-public class DynamicPage {
+public class DynamicPage extends BaseTest {
 
     WebDriver driver;
     WebDriverWait wait;

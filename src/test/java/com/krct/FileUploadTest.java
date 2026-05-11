@@ -11,7 +11,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import java.time.Duration;
-public class FileUploadTest {
+public class FileUploadTest extends BaseTest{
     WebDriver driver;
     WebDriverWait wait;
     @BeforeMethod
