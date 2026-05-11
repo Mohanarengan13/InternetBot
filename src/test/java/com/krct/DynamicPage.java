@@ -24,7 +24,6 @@ public class DynamicPage {
         driver.manage().window().maximize();
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
-
     @Test(priority = 1)
     public void dynamicControlsTest() {
         driver.get("https://the-internet.herokuapp.com/dynamic_controls");
@@ -47,7 +46,6 @@ public class DynamicPage {
                 driver.findElement(By.id("message")).getText().contains("enabled")
         );
     }
-
     @Test(priority = 2)
     public void dynamicLoadingTest() {
         driver.get("https://the-internet.herokuapp.com/dynamic_loading");
@@ -65,7 +63,6 @@ public class DynamicPage {
                 "Hello World!"
         );
     }
-
     @Test(priority = 3)
     public void disappearingElementReappearsTest() {
         driver.get("https://the-internet.herokuapp.com/dynamic_controls");
