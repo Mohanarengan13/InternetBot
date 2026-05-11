@@ -26,9 +26,9 @@ public class Csvreader {
                 String[] values = line.split(",");
 
                 data.add(new Object[]{
-                        values[0], // username
-                        values[1], // password
-                        values[2]  // expected message
+                        values[0],
+                        values[1],
+                        values[2]
                 });
             }
 

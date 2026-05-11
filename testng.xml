@@ -1,6 +1,6 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 
-<suite name="InternetBotSuite" parallel="tests" thread-count="2">
+<suite name="MockHackSuite" parallel="none">
 
     <listeners>
         <listener class-name="listeners.ListenerClass"/>
@@ -11,13 +11,9 @@
         <classes>
 
             <class name="com.krct.LoginPage"/>
-
             <class name="com.krct.AlertPage"/>
-
             <class name="com.krct.HoverTest"/>
-
             <class name="com.krct.FileUploadTest"/>
-
             <class name="com.krct.DynamicPage"/>
 
         </classes>

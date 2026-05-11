@@ -31,15 +31,18 @@ public class ListenerClass implements ITestListener {
 
         test.fail(result.getThrowable());
 
-        String screenshotPath = ScreenshotUtil.captureScreenshot(
-                BaseTest.driver,
-                result.getMethod().getMethodName()
-        );
+        if (BaseTest.driver != null) {
 
-        try {
-            test.addScreenCaptureFromPath(screenshotPath);
-        } catch (Exception e) {
-            e.printStackTrace();
+            String screenshotPath = ScreenshotUtil.captureScreenshot(
+                    BaseTest.driver,
+                    result.getMethod().getMethodName()
+            );
+
+            try {
+                test.addScreenCaptureFromPath(screenshotPath);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     }
 
