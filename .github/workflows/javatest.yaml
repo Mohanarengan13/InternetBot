@@ -23,6 +23,6 @@ jobs:
           password: ${{secrets.ACTION_PASSWORD}}
           subject: Automation Test Report
           to: mohanarengan939@gmail.com
-          from: Gitbub Actions
+          from: GitHub Actions
           html_body: file://target/surefire-reports/emailable-report.html
 

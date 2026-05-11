@@ -81,7 +81,6 @@ public class DynamicPage extends BaseTest {
                         By.id("checkbox")
                 )
         );
-//Assert
         Assert.assertTrue(checkboxAfterRefresh.isDisplayed());
     }
 }
