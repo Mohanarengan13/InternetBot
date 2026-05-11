@@ -19,8 +19,8 @@ jobs:
           server_address: smtp.gmail.com
           server_port: 465
           secure: true
-          username: ${{secrets.MAIL_USERNAME}}
-          password: ${{secrets.MAIL_PASSWORD}}
+          username: ${{secrets.ACTION_USERNAME}}
+          password: ${{secrets.ACTION_PASSWORD}}
           subject: Automation Test Report
           to: mohanarengan939@gmail.com
           from: Gitbub Actions
