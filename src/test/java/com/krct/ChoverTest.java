@@ -1,44 +1,16 @@
 package com.krct;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import java.time.Duration;
 import java.util.List;
 
-public class ChoverTest extends BaseTest{
-
-    WebDriver driver;
-    WebDriverWait wait;
-
-    @BeforeMethod
-    public void setUp() {
-        ChromeOptions options = new ChromeOptions();
-
-        options.addArguments("--headless=new");
-        options.addArguments("--no-sandbox");
-        options.addArguments("--disable-dev-shm-usage");
-
-
-        driver = new ChromeDriver();
-
-        driver.manage().window().maximize();
-
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-
-        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-    }
+public class ChoverTest extends BaseTest {
 
     @Test(priority = 1)
     public void hoverTest() {
@@ -116,14 +88,6 @@ public class ChoverTest extends BaseTest{
                     dropdown.getFirstSelectedOption().getText(),
                     value
             );
-        }
-    }
-
-    @AfterMethod
-    public void tearDown() {
-
-        if (driver != null) {
-            driver.quit();
         }
     }
 }

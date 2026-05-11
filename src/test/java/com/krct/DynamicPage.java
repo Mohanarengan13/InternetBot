@@ -1,36 +1,12 @@
 package com.krct;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import java.time.Duration;
-
 public class DynamicPage extends BaseTest {
-
-    WebDriver driver;
-    WebDriverWait wait;
-
-    @BeforeMethod
-    public void setUp() {
-        ChromeOptions options = new ChromeOptions();
-
-        options.addArguments("--headless=new");
-        options.addArguments("--no-sandbox");
-        options.addArguments("--disable-dev-shm-usage");
-
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-    }
 
     @Test(priority = 1)
     public void dynamicControlsTest() {
@@ -44,7 +20,9 @@ public class DynamicPage extends BaseTest {
         ));
 
         Assert.assertTrue(
-                driver.findElement(By.id("message")).getText().contains("It's gone")
+                driver.findElement(By.id("message"))
+                        .getText()
+                        .contains("It's gone")
         );
 
         driver.findElement(By.xpath("//button[text()='Enable']")).click();
@@ -54,7 +32,9 @@ public class DynamicPage extends BaseTest {
         ));
 
         Assert.assertTrue(
-                driver.findElement(By.id("message")).getText().contains("enabled")
+                driver.findElement(By.id("message"))
+                        .getText()
+                        .contains("enabled")
         );
     }
 
@@ -70,7 +50,9 @@ public class DynamicPage extends BaseTest {
         driver.findElement(By.xpath("//button[text()='Start']")).click();
 
         WebElement hello = wait.until(
-                ExpectedConditions.visibilityOfElementLocated(By.id("finish"))
+                ExpectedConditions.visibilityOfElementLocated(
+                        By.id("finish")
+                )
         );
 
         Assert.assertEquals(
@@ -85,7 +67,9 @@ public class DynamicPage extends BaseTest {
         driver.get("https://the-internet.herokuapp.com/dynamic_controls");
 
         WebElement checkbox = wait.until(
-                ExpectedConditions.visibilityOfElementLocated(By.id("checkbox"))
+                ExpectedConditions.visibilityOfElementLocated(
+                        By.id("checkbox")
+                )
         );
 
         Assert.assertTrue(checkbox.isDisplayed());
@@ -93,16 +77,11 @@ public class DynamicPage extends BaseTest {
         driver.navigate().refresh();
 
         WebElement checkboxAfterRefresh = wait.until(
-                ExpectedConditions.visibilityOfElementLocated(By.id("checkbox"))
+                ExpectedConditions.visibilityOfElementLocated(
+                        By.id("checkbox")
+                )
         );
 
         Assert.assertTrue(checkboxAfterRefresh.isDisplayed());
-    }
-
-    @AfterMethod
-    public void tearDown() {
-        if (driver != null) {
-            driver.quit();
-        }
     }
 }
