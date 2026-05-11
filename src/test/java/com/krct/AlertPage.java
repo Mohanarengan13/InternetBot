@@ -15,8 +15,6 @@ import java.time.Duration;
         By result = By.id("result");
         @BeforeMethod
         public void setup() {
-            System.setProperty("webdriver.chrome.driver",
-                    "C:\\drivers\\chromedriver.exe");
             driver = new ChromeDriver();
             driver.manage().window().maximize();
             wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -60,6 +58,24 @@ import java.time.Duration;
             alert.dismiss();
             String cancelResult = driver.findElement(result).getText();
             Assert.assertEquals(cancelResult, "You entered: null");
+        }
+        @Test(priority = 4)
+        public void resultUpdateTest() {
+            openPage();
+
+            driver.findElement(alertBtn).click();
+            driver.switchTo().alert().accept();
+            Assert.assertTrue(driver.findElement(result).getText().contains("alert"));
+
+            driver.findElement(confirmBtn).click();
+            driver.switchTo().alert().dismiss();
+            Assert.assertTrue(driver.findElement(result).getText().contains("Cancel"));
+
+            driver.findElement(promptBtn).click();
+            Alert alert = wait.until(ExpectedConditions.alertIsPresent());
+            alert.sendKeys("test");
+            alert.accept();
+            Assert.assertTrue(driver.findElement(result).getText().contains("test"));
         }
         @AfterMethod
         public void teardown() {

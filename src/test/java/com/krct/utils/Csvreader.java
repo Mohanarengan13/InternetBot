@@ -1,4 +1,4 @@
-package com.krct;
+package com.krct.utils;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
