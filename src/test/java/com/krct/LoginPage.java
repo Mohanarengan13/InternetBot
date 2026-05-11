@@ -5,7 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import com.krct.utils.Csvreader;
+import com.krct.cssv.Csvreader;
 import pomcj.pompack.Pomtest;
 
 public class LoginPage extends BaseTest {

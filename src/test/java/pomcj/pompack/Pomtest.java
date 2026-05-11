@@ -3,17 +3,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 public class Pomtest {
-
-private WebDriver driver;
+    private WebDriver driver;
     private WebDriverWait wait;
-
     private By usernameField = By.id("username");
     private By passwordField = By.id("password");
     private By loginButton = By.cssSelector("button[type='submit']");
     private By flashMessage = By.id("flash");
-
 public Pomtest(WebDriver driver, WebDriverWait wait) {
     this.driver = driver;
     this.wait = wait;

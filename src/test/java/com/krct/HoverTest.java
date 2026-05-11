@@ -14,10 +14,10 @@ public class HoverTest extends BaseTest {
     @Test(priority = 1)
     public void hoverTest() {
         driver.get("https://the-internet.herokuapp.com/hovers");
-        WebElement second = driver.findElements(By.className("figure")).get(1);
+        WebElement first = driver.findElements(By.className("figure")).get(1);
         Actions actions = new Actions(driver);
-        actions.moveToElement(second).perform();
-        WebElement caption = second.findElement(By.className("figcaption"));
+        actions.moveToElement(first).perform();
+        WebElement caption = first.findElement(By.className("figcaption"));
         wait.until(ExpectedConditions.visibilityOf(caption));
         Assert.assertTrue(caption.isDisplayed());
     }
@@ -25,16 +25,13 @@ public class HoverTest extends BaseTest {
     public void checkboxTest() {
         driver.get("https://the-internet.herokuapp.com/checkboxes");
         List<WebElement> boxes = driver.findElements(By.cssSelector("input[type='checkbox']"));
-
         WebElement c1 = boxes.get(0);
         WebElement c2 = boxes.get(1);
-
         boolean s1 = c1.isSelected();
         c1.click();
         Assert.assertNotEquals(c1.isSelected(), s1);
         c1.click();
         Assert.assertEquals(c1.isSelected(), s1);
-
         boolean s2 = c2.isSelected();
         c2.click();
         Assert.assertNotEquals(c2.isSelected(), s2);
