@@ -16,7 +16,7 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 import java.util.List;
 
-public class HoverTest {
+public class ChoverTest {
 
     WebDriver driver;
     WebDriverWait wait;

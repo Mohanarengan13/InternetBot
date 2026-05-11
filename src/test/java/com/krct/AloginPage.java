@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 import com.krct.cssv.Csvreader;
 import pomcj.pompack.Pomtest;
 
-public class LoginPage extends BaseTest {
+public class AloginPage extends BaseTest {
 
     @DataProvider(name = "loginData")
     public Object[][] getData() {

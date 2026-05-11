@@ -10,9 +10,9 @@
 
         <classes>
 
-            <class name="com.krct.LoginPage"/>
-            <class name="com.krct.AlertPage"/>
-            <class name="com.krct.HoverTest"/>
+            <class name="com.krct.AloginPage"/>
+            <class name="com.krct.BtestAlert"/>
+            <class name="com.krct.ChoverTest"/>
             <class name="com.krct.FileUploadTest"/>
             <class name="com.krct.DynamicPage"/>
 

@@ -12,7 +12,7 @@ import org.testng.annotations.*;
 
 import java.time.Duration;
 
-public class AlertPage {
+public class BtestAlert{
 
     private WebDriver driver;
     private WebDriverWait wait;
