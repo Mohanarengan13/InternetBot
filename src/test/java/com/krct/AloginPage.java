@@ -39,7 +39,7 @@ public class AloginPage extends BaseTest {
     }
 
     @Test(priority = 2)
-    public void validLoginTest() {
+    public void validLogin() {
 
         driver.get("https://admin:admin@the-internet.herokuapp.com/basic_auth");
 
@@ -49,7 +49,7 @@ public class AloginPage extends BaseTest {
     }
 
     @Test(priority = 3)
-    public void wrongUsernameTest() {
+    public void wrongUser() {
 
         driver.get("https://wrongUser:admin@the-internet.herokuapp.com/basic_auth");
 
@@ -59,7 +59,7 @@ public class AloginPage extends BaseTest {
     }
 
     @Test(priority = 4)
-    public void wrongPasswordTest() {
+    public void wrongPass() {
 
         driver.get("https://admin:wrongPass@the-internet.herokuapp.com/basic_auth");
 

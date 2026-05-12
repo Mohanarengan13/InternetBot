@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 public class DynamicPage extends BaseTest {
 
     @Test(priority = 1)
-    public void dynamicControlsTest() {
+    public void dynamicControls() {
 
         driver.get("https://the-internet.herokuapp.com/dynamic_controls");
 
@@ -39,7 +39,7 @@ public class DynamicPage extends BaseTest {
     }
 
     @Test(priority = 2)
-    public void dynamicLoadingTest() {
+    public void dynamicLoad() {
 
         driver.get("https://the-internet.herokuapp.com/dynamic_loading");
 
