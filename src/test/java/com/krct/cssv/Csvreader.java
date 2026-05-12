@@ -6,36 +6,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Csvreader {
-
     public static Object[][] readCSV(String filePath) {
-
         List<Object[]> data = new ArrayList<>();
-
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
-
             String line;
             boolean skipHeader = true;
-
             while ((line = br.readLine()) != null) {
-
                 if (skipHeader) {
                     skipHeader = false;
                     continue;
                 }
-
                 String[] values = line.split(",");
-
                 data.add(new Object[]{
                         values[0],
                         values[1],
                         values[2]
                 });
             }
-
         } catch (Exception e) {
             e.printStackTrace();
         }
-
         return data.toArray(new Object[0][]);
     }
 }

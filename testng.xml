@@ -1,23 +1,15 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-
 <suite name="MockHackSuite" parallel="none">
-
     <listeners>
         <listener class-name="listeners.ListenerClass"/>
     </listeners>
-
     <test name="AutomationTests">
-
         <classes>
-
             <class name="com.krct.AloginPage"/>
             <class name="com.krct.BtestAlert"/>
             <class name="com.krct.ChoverTest"/>
             <class name="com.krct.FileUploadTest"/>
             <class name="com.krct.DynamicPage"/>
-
         </classes>
-
     </test>
-
 </suite>
