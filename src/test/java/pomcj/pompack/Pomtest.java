@@ -6,20 +6,20 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class Pomtest {
     private WebDriver driver;
     private WebDriverWait wait;
-    private By usernameField = By.id("username");
-    private By passwordField = By.id("password");
+    private By name= By.id("username");
+    private By pass = By.id("password");
     private By loginButton = By.cssSelector("button[type='submit']");
     private By flashMessage = By.id("flash");
 public Pomtest(WebDriver driver, WebDriverWait wait) {
     this.driver = driver;
     this.wait = wait;
 }
-  public void enterUsername(String username) {
-    wait.until(ExpectedConditions.visibilityOfElementLocated(usernameField))
+  public void enterName(String username) {
+    wait.until(ExpectedConditions.visibilityOfElementLocated(name))
         .sendKeys(username);
 }
-public void enterPassword(String password) {
-    wait.until(ExpectedConditions.visibilityOfElementLocated(passwordField))
+public void enterPass(String password) {
+    wait.until(ExpectedConditions.visibilityOfElementLocated(pass))
         .sendKeys(password);
 }
 public void clickLogin() {

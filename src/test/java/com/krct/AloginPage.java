@@ -28,8 +28,8 @@ public class AloginPage extends BaseTest {
 
         Pomtest loginPage = new Pomtest(driver, wait);
 
-        loginPage.enterUsername(username);
-        loginPage.enterPassword(password);
+        loginPage.enterName(username);
+        loginPage.enterPass(password);
         loginPage.clickLogin();
 
         String msg = loginPage.getMessage();
@@ -45,7 +45,7 @@ public class AloginPage extends BaseTest {
 
         String message = driver.findElement(By.cssSelector("p")).getText();
 
-        Assert.assertTrue(message.contains("Congratulations"));
+        Assert.assertTrue(message.contains("Congratulations! You must have the proper credentials."));
     }
 
     @Test(priority = 3)
