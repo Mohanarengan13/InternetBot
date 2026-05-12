@@ -30,8 +30,8 @@ public class FileUploadTest extends BaseTest {
         String filePath = System.getProperty("user.dir") + "/src/test/resources/image.jpg";
         driver.findElement(By.id("file-upload")).sendKeys(filePath);
         driver.findElement(By.id("file-submit")).click();
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("upload-files")));
-        Assert.assertEquals(driver.findElement(By.id("upload-files")).getText(), "image.jpg");
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("uploaded-files")));
+        Assert.assertEquals(driver.findElement(By.id("uploaded-files")).getText(), "image.jpg");
     }
     @Test(priority = 4)
     public void downloadPageCheck() {
