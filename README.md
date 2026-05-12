@@ -1,5 +1,4 @@
 This is a hybrid automation testing framework built using:
-
 Selenium WebDriver
 TestNG
 Maven
