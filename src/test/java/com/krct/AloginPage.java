@@ -55,7 +55,7 @@ public class AloginPage extends BaseTest {
                 .sendKeys("tomsmith");
         driver.findElement(By.id("password"))
                 .sendKeys("SuperSecretPassword!");
-        driver.findElement(By.cssSelector("button[type='submit']")).click();
+        driver.findElement(By.cssSelector("button[type=Submit]")).click();
         wait.until(ExpectedConditions.elementToBeClickable(
                 By.cssSelector("a.button.secondary.radius")
         )).click();
